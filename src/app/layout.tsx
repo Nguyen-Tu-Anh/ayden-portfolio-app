@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
+import "@/components/sites/ayden/ayden.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const barlowCondensed = Barlow_Condensed({
+  variable: "--font-barlow-condensed",
+  subsets: ["latin", "vietnamese"],
+  weight: ["500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "vietnamese"],
+  weight: ["300", "400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Ayden — DJ & Producer | Official Site",
+  description:
+    "Ayden — open format DJ & producer. Live sets, portfolio and bookings.",
+  icons: { icon: "/sites/ayden/favicon.png" },
+  // keep the hero phone/email as plain text: stop iOS Safari auto-linking them
+  formatDetection: { telephone: false, email: false, address: false },
 };
 
 export default function RootLayout({
@@ -23,11 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${barlowCondensed.variable} ${inter.variable}`}>
+      <body className="ayden">{children}</body>
     </html>
   );
 }

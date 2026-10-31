@@ -1,0 +1,66 @@
+[
+  {
+    "overflow": false,
+    "scrollY": 2778,
+    "viewport": "844x390",
+    "visibleRevealsHidden": 0,
+    "previousScroll": 3799,
+    "unexpectedTopReset": false
+  },
+  {
+    "overflow": false,
+    "scrollY": 2778,
+    "viewport": "390x844",
+    "visibleRevealsHidden": 0,
+    "previousScroll": 2778,
+    "unexpectedTopReset": false
+  },
+  {
+    "overflow": false,
+    "scrollY": 2778,
+    "viewport": "768x1024",
+    "visibleRevealsHidden": 0,
+    "previousScroll": 2778,
+    "unexpectedTopReset": false
+  },
+  {
+    "overflow": false,
+    "scrollY": 2778,
+    "viewport": "1024x768",
+    "visibleRevealsHidden": 0,
+    "previousScroll": 2778,
+    "unexpectedTopReset": false
+  },
+  {
+    "overflow": false,
+    "scrollY": 2778,
+    "viewport": "768x1024",
+    "visibleRevealsHidden": 0,
+    "previousScroll": 2778,
+    "unexpectedTopReset": false
+  },
+  {
+    "overflow": false,
+    "scrollY": 2335,
+    "viewport": "820x1180",
+    "visibleRevealsHidden": 0,
+    "previousScroll": 2778,
+    "unexpectedTopReset": false
+  },
+  {
+    "overflow": false,
+    "scrollY": 2335,
+    "viewport": "1180x820",
+    "visibleRevealsHidden": 0,
+    "previousScroll": 2335,
+    "unexpectedTopReset": false
+  },
+  {
+    "overflow": false,
+    "scrollY": 2335,
+    "viewport": "820x1180",
+    "visibleRevealsHidden": 0,
+    "previousScroll": 2335,
+    "unexpectedTopReset": false
+  }
+]

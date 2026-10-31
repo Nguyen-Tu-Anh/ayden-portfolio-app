@@ -1,0 +1,1263 @@
+/* Ayden homepage styles. Everything lives under .ayden. */
+.ayden {
+  --nav-height: 100px;
+  --bg: #0e0e0e;
+  --bg2: #141414;
+  --bg3: #1a1a1a;
+  --bdr: rgba(255, 255, 255, 0.08);
+  --w: #fff;
+  --gl: #b0b0b0;
+  --gm: #707070;
+  --gd: #3a3a3a;
+  /* accent: Okai orange (html.bslthemes.com/okai) */
+  --r: #f35a38;
+  --rl: #f6765a;
+  --on-r: #0a0b0f;
+  --cond: var(--font-barlow-condensed), sans-serif;
+  --sans: "Helvetica Neue", var(--font-inter), Helvetica, Arial, sans-serif;
+  --ease-out: cubic-bezier(0, 0, 0.3642, 1);
+
+  background: var(--bg);
+  color: var(--w);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html:has(.ayden) {
+  background: #0e0e0e;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+.ayden *,
+.ayden *::before,
+.ayden *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-color: transparent;
+}
+.ayden a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ayden .noise {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+/* a full-screen fixed overlay is composited over every scrolled frame; at 3% opacity it
+   is invisible on phones, so skip the cost there */
+@media (hover: none), (any-pointer: coarse), (max-width: 1024px) {
+  .ayden .noise {
+    display: none;
+  }
+}
+
+/* motion layer (scroll-motion.tsx) — ported from the Okai theme */
+.ayden .scroll-progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10003;
+  width: 5px;
+  height: 100%;
+  background: var(--bg2);
+}
+.ayden .scroll-progress__bar {
+  width: 5px;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--r);
+  /* grown with scaleY (compositor-only) instead of height (layout every frame) */
+  transform: scaleY(0);
+  transform-origin: top;
+  will-change: transform;
+}
+/* Reserve compositor layers for desktop; touch devices use small native scroll zooms. */
+@media (min-width: 1100px) and (hover: hover) and (pointer: fine) {
+  .ayden .scale-img {
+    will-change: transform;
+  }
+}
+@media (max-width: 1024px), (any-pointer: coarse) {
+  .ayden .scroll-progress {
+    display: none;
+  }
+}
+
+/* nav — layout ported from afrojack.com header */
+.ayden .site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background: var(--bg);
+  border-bottom: 1px solid var(--bdr);
+}
+.ayden .site-nav__inner {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+.ayden .site-nav__logo {
+  display: block;
+  width: 240px;
+  margin: 0 30px;
+  flex-shrink: 0;
+}
+.ayden .site-nav__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ayden .site-nav__menu {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.ayden .site-nav__menu--left {
+  justify-content: flex-end;
+}
+.ayden .site-nav__menu--right {
+  justify-content: flex-start;
+}
+.ayden .site-nav__menu li {
+  margin: 0 30px;
+}
+.ayden .site-nav__menu a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 10px;
+  color: var(--gl);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.3s,
+    border-color 0.3s;
+}
+.ayden .site-nav__menu a:hover {
+  color: var(--w);
+  border-bottom-color: var(--gd);
+}
+.ayden a:focus-visible {
+  outline: 2px solid var(--r);
+  outline-offset: 4px;
+}
+
+.ayden .site-nav__menu svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1169px) {
+  .ayden .site-nav__menu li {
+    margin: 0 18px;
+  }
+}
+@media (max-width: 1099px) {
+  .ayden .site-nav__logo {
+    width: 180px;
+    margin: 0 20px;
+  }
+  .ayden .site-nav__menu li {
+    margin: 0 10px;
+  }
+  .ayden .site-nav__menu a {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* hero */
+.ayden .hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: calc(var(--nav-height) + 40px) 0 48px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.ayden .hero-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+}
+.ayden .hero-photo-area {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 55%;
+  overflow: hidden;
+}
+.ayden .hero-photo-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.ayden .hero-photo-area::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, var(--bg) 0%, rgba(14, 14, 14, 0.4) 35%, transparent 65%),
+    linear-gradient(to top, var(--bg) 0%, transparent 30%),
+    linear-gradient(to bottom, rgba(14, 14, 14, 0.3) 0%, transparent 15%);
+}
+.ayden .hero-content {
+  position: relative;
+  z-index: 2;
+  padding-left: clamp(32px, 5.5vw, 80px);
+  max-width: 600px;
+  margin-right: auto;
+}
+.ayden .hero-title {
+  width: 320px;
+  margin-bottom: 20px;
+  font-family: var(--cond);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--w);
+}
+.ayden .hero-tagline {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gl);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  width: 320px;
+  text-align: center;
+}
+
+/* hero profile list: orange labels over white values, one fact per row */
+.ayden .hero-profile {
+  /* same 320px column as the centred title and tagline above it */
+  width: 320px;
+  text-align: center;
+}
+.ayden .hero-profile__row {
+  padding: 16px 0;
+  border-top: 1px solid var(--bdr);
+}
+.ayden .hero-profile__row:last-child {
+  border-bottom: 1px solid var(--bdr);
+}
+.ayden .hero-profile dt {
+  margin-bottom: 6px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--r);
+}
+.ayden .hero-profile dd {
+  font-family: var(--cond);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 1px;
+  color: var(--w);
+}
+
+/* phone + email share the last row: two label/value columns side by side */
+.ayden .hero-profile__row--contact {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  justify-content: center;
+  column-gap: 28px;
+}
+.ayden .hero-profile__row--contact dd {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* hero vinyl player */
+.ayden .vp {
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  position: relative;
+  z-index: 10001;
+  outline: none;
+}
+.ayden .vp:focus-visible .vp-stage {
+  outline: 1px dashed var(--gd);
+  outline-offset: 8px;
+}
+.ayden .vp-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: var(--vp-meta-w, 560px);
+  padding-bottom: 10px;
+  margin-bottom: 4px;
+  border-bottom: 1px dashed var(--bdr);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gm);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+/* phone + email: one font and size, bold, accent orange */
+.ayden .vp-meta-label,
+.ayden .vp-meta-link {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--r);
+  text-transform: none;
+  transition: color 0.3s;
+}
+.ayden .vp-meta-label:hover,
+.ayden .vp-meta-link:hover {
+  color: var(--w);
+}
+.ayden .vp-stage {
+  position: relative;
+  width: var(--vp-w);
+  height: var(--vp-h);
+}
+
+.ayden .vp-disc,
+.ayden .vp-sheen {
+  position: absolute;
+  left: calc(var(--vp-cx) - var(--vp-disc));
+  top: calc(50% - var(--vp-disc));
+  width: calc(var(--vp-disc) * 2);
+  height: calc(var(--vp-disc) * 2);
+  border-radius: 50%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 42%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 42%);
+  pointer-events: none;
+}
+.ayden .vp-disc {
+  background:
+    conic-gradient(from 0deg, rgba(255, 255, 255, 0.05), transparent 12%, transparent 48%, rgba(255, 255, 255, 0.04) 55%, transparent 68%),
+    repeating-radial-gradient(circle at center, #161616 0 1px, #0a0a0a 1px 3px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 30px 90px rgba(0, 0, 0, 0.7);
+  animation: vp-spin 1.8s linear infinite;
+  animation-play-state: paused;
+}
+.ayden .vp-disc.is-spinning {
+  animation-play-state: running;
+}
+.ayden .vp-sheen {
+  background: conic-gradient(from 210deg, transparent 0deg, rgba(255, 255, 255, 0.07) 18deg, transparent 46deg, transparent 180deg, rgba(255, 255, 255, 0.05) 200deg, transparent 228deg);
+}
+.ayden .vp-label {
+  position: absolute;
+  inset: 33%;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 35% 30%, #f4f4f4 0%, #a8a8a8 50%, #4c4c4c 100%);
+  box-shadow: inset 0 0 0 2px rgba(243, 90, 56, 0.85);
+}
+.ayden .vp-label span {
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #1a1a1a;
+  transform: translateY(-140%);
+}
+.ayden .vp-label::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bg);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+@keyframes vp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ayden .vp-row {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: calc(var(--vp-w) - var(--x));
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transform: translate(var(--x), calc(var(--y) - 50%));
+  opacity: var(--o);
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.45s ease;
+}
+.ayden .vp-row.no-anim {
+  transition: none;
+}
+.ayden .vp-row[aria-hidden="true"] {
+  pointer-events: none;
+}
+.ayden .vp-num {
+  position: relative;
+  flex-shrink: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 0.9;
+  letter-spacing: -1px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.22);
+  transition: color 0.3s, font-size 0.3s;
+}
+.ayden .vp-row:hover .vp-num {
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.5);
+}
+.ayden .vp-row.is-active .vp-num {
+  font-size: 72px;
+  color: var(--w);
+  -webkit-text-stroke: 0;
+}
+.ayden .vp-state {
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0;
+  color: var(--r);
+  -webkit-text-stroke: 0;
+}
+.ayden .vp-body {
+  flex: 1;
+  min-width: 0;
+}
+.ayden .vp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+.ayden .vp-title {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gl);
+  text-align: left;
+}
+.ayden .vp-row.is-active .vp-title {
+  color: var(--w);
+}
+.ayden .vp-time {
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--gm);
+  font-variant-numeric: tabular-nums;
+}
+.ayden .vp-wave {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 48px;
+  margin-top: 8px;
+  cursor: pointer;
+  touch-action: none;
+}
+.ayden .vp-bar {
+  flex: 1;
+  height: calc(var(--h) * 100%);
+  background: var(--gd);
+  transition: height 0.4s ease, background-color 0.15s;
+}
+.ayden .vp-bar.is-played {
+  background: var(--rl);
+}
+.ayden .vp-row.is-playing .vp-bar:not(.is-played) {
+  background: #555;
+}
+.ayden .vp-wave:hover .vp-bar:not(.is-played) {
+  background: #666;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ayden .vp-disc {
+    animation: none;
+  }
+  .ayden .vp-row,
+  .ayden .vp-bar {
+    transition: none;
+  }
+}
+
+/* divider */
+.ayden .divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gd), transparent);
+}
+
+/* portfolio — layout from the Okai theme */
+.ayden .portfolio {
+  scroll-margin-top: calc(var(--nav-height) + 16px);
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 120px 15px 90px;
+}
+.ayden .portfolio-head {
+  margin-bottom: 60px;
+}
+.ayden .portfolio-heading {
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--w);
+}
+.ayden .portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+.ayden .project-card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.ayden .project-cover {
+  position: relative;
+  width: 100%;
+  background: var(--bg);
+}
+.ayden .project-cover--v {
+  padding-bottom: 150%;
+}
+.ayden .project-cover--s {
+  padding-bottom: 100%;
+}
+.ayden .project-cover--h {
+  padding-bottom: 65%;
+}
+.ayden .project-frame,
+.ayden .project-overlay {
+  position: absolute;
+  inset: 0;
+  transition: 0.4s var(--ease-out);
+}
+.ayden .project-frame {
+  overflow: hidden;
+}
+.ayden .project-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform-origin: center top;
+}
+.ayden .project-overlay {
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(14, 14, 14, 0.45), transparent 32%),
+    radial-gradient(ellipse at 50% 38%, transparent 45%, rgba(14, 14, 14, 0.18) 100%);
+  opacity: 0.65;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ayden .project-card:hover .project-frame {
+    transform: scale(0.99);
+  }
+  .ayden .project-card:hover .project-overlay {
+    opacity: 0.35;
+  }
+}
+@media (max-width: 992px) {
+  .ayden .portfolio-heading {
+    font-size: 38px;
+  }
+}
+@media (max-width: 768px) {
+  .ayden .portfolio {
+    padding: 80px 20px 60px;
+  }
+  .ayden .portfolio-heading {
+    font-size: 32px;
+  }
+  .ayden .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* bio */
+.ayden .bio {
+  padding: 120px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 80px;
+  align-items: center;
+}
+.ayden .bio-photo {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+.ayden .bio-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(14, 14, 14, 0.4), transparent 28%),
+    radial-gradient(ellipse at 50% 38%, transparent 45%, rgba(14, 14, 14, 0.12) 100%);
+}
+.ayden .bio-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform-origin: center top;
+}
+.ayden .bio-label,
+.ayden .section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--r);
+  margin-bottom: 20px;
+}
+.ayden .section-label {
+  margin-bottom: 48px;
+}
+.ayden .bio-heading {
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 48px;
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: var(--w);
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+}
+.ayden .bio-text {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--gl);
+  font-weight: 300;
+}
+.ayden .bio-text p {
+  margin-bottom: 20px;
+}
+.ayden .bio-quote {
+  font-family: var(--cond);
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--w);
+  margin-top: 36px;
+  padding-left: 20px;
+  border-left: 3px solid var(--r);
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+}
+.ayden .bio-quote__initial {
+  color: var(--r);
+}
+
+/* connect cards */
+.ayden .links-section {
+  padding: 100px 80px;
+  text-align: center;
+  background: var(--bg2);
+}
+.ayden .links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.ayden .link-card {
+  padding: 28px 20px;
+  border: 1px solid var(--bdr);
+  background: var(--bg3);
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  z-index: 5;
+}
+.ayden .link-card:hover {
+  border-color: var(--r);
+  background: rgba(243, 90, 56, 0.08);
+}
+.ayden .link-title {
+  font-family: var(--cond);
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--w);
+}
+.ayden .link-sub {
+  font-size: 10px;
+  color: var(--gm);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* on tour */
+.ayden .tickets-preview {
+  padding: 100px 80px;
+  text-align: center;
+}
+.ayden .tickets-preview--bg {
+  position: relative;
+  overflow: hidden;
+  background: #0e0e0e url(/sites/ayden/tour-bg.jpg) center / cover no-repeat;
+}
+.ayden .tickets-preview--bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 14, 14, 0.68) 0%, rgba(14, 14, 14, 0.3) 45%, rgba(14, 14, 14, 0.72) 100%);
+  z-index: 0;
+}
+.ayden .tickets-preview--bg > * {
+  position: relative;
+  z-index: 1;
+}
+.ayden .tickets-heading {
+  font-family: var(--cond);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--w);
+  letter-spacing: 1px;
+  font-size: 56px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.ayden .tickets-sub {
+  font-size: 14px;
+  color: var(--gl);
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+.ayden .tickets-cta {
+  display: inline-block;
+  padding: 16px 48px;
+  background: var(--r);
+  color: var(--on-r);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition:
+    background 0.3s,
+    transform 0.4s var(--ease-out),
+    filter 0.4s var(--ease-out);
+  position: relative;
+  z-index: 10001;
+}
+.ayden .tickets-cta:hover {
+  background: var(--rl);
+  transform: scale(1.05);
+  filter: brightness(110%);
+}
+
+/* email capture */
+.ayden .capture-section {
+  padding: 100px 80px;
+  text-align: center;
+  background: var(--bg2);
+}
+.ayden .capture-heading {
+  font-family: var(--cond);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: var(--w);
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.ayden .capture-sub {
+  font-size: 13px;
+  color: var(--gl);
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  margin-bottom: 40px;
+}
+.ayden .capture-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+.ayden .capture-form input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--bdr);
+  color: var(--w);
+  padding: 14px 18px;
+  font-size: 14px;
+  font-family: var(--sans);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  border-radius: 0;
+}
+.ayden .capture-form input::placeholder {
+  color: var(--gd);
+  letter-spacing: 1.5px;
+  font-size: 12px;
+}
+.ayden .capture-form input:focus {
+  outline: none;
+  border-color: var(--r);
+}
+.ayden .capture-submit {
+  background: var(--r);
+  border: 1px solid var(--r);
+  color: var(--on-r);
+  cursor: pointer;
+  padding: 14px 30px;
+  font-family: var(--cond);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition:
+    background 0.3s,
+    transform 0.4s var(--ease-out),
+    filter 0.4s var(--ease-out);
+  border-radius: 0;
+  position: relative;
+  z-index: 10001;
+}
+.ayden .capture-submit:hover:not(:disabled) {
+  background: var(--rl);
+  transform: scale(1.05);
+  filter: brightness(110%);
+}
+.ayden .capture-submit:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.ayden .capture-msg {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--gl);
+  margin-top: 18px;
+  min-height: 16px;
+}
+.ayden .intent-chips {
+  flex: 1 1 100%;
+  max-width: 480px;
+  margin: 18px auto 0;
+  text-align: left;
+}
+.ayden .intent-label,
+.ayden .intent-city-label {
+  display: block;
+  font-family: var(--cond);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gm);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.ayden .intent-city-label {
+  margin-bottom: 8px;
+}
+.ayden .intent-optional {
+  opacity: 0.55;
+  letter-spacing: 2px;
+}
+.ayden .intent-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ayden .intent-chip {
+  background: transparent;
+  color: var(--gl);
+  border: 1px solid var(--bdr);
+  padding: 10px 16px;
+  font-family: var(--cond);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  position: relative;
+  z-index: 5;
+}
+.ayden .intent-chip:hover {
+  border-color: var(--w);
+  color: var(--w);
+}
+.ayden .intent-chip[aria-pressed="true"] {
+  background: rgba(243, 90, 56, 0.18);
+  border-color: var(--r);
+  color: var(--w);
+}
+.ayden .intent-city {
+  margin-top: 12px;
+}
+.ayden .intent-city input {
+  width: 100%;
+}
+.ayden .hp {
+  position: absolute !important;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+/* footer */
+.ayden .site-footer {
+  padding: 60px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--bdr);
+  position: relative;
+  z-index: 10000;
+}
+.ayden .footer-logo img {
+  height: 22px;
+  width: auto;
+  display: inline;
+}
+.ayden .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px clamp(12px, 2vw, 28px);
+  min-width: 0;
+}
+.ayden .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--gm);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.ayden .footer-links a:hover {
+  color: var(--w);
+}
+.ayden .footer-right {
+  font-size: 10px;
+  color: var(--gm);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .ayden {
+    --nav-height: 106px;
+  }
+  /* logo on top, socials (icon + label) underneath */
+  .ayden .site-nav__inner {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 2px;
+    padding: 8px max(8px, env(safe-area-inset-left)) 6px max(8px, env(safe-area-inset-right));
+  }
+  .ayden .site-nav__logo {
+    order: -1;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    width: auto;
+    margin: 0;
+  }
+  .ayden .site-nav__logo img {
+    width: 170px;
+  }
+  .ayden .site-nav__menu {
+    flex: 0 0 auto;
+  }
+  .ayden .site-nav__menu li {
+    margin: 0 4px;
+  }
+  /* phone link stays on desktop only; the hero player already shows the number */
+  .ayden .site-nav__menu li:has(> a[href^="tel:"]) {
+    display: none;
+  }
+  .ayden .site-nav__menu a {
+    gap: 5px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .ayden .site-nav__menu svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .ayden .vp {
+    --vp-meta-w: 300px;
+    margin-top: 268px;
+  }
+  .ayden .vp-meta {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+  .ayden .vp-meta-label,
+  .ayden .vp-meta-link {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .ayden .vp-num {
+    font-size: 32px;
+  }
+  .ayden .vp-row.is-active .vp-num {
+    font-size: 52px;
+  }
+  .ayden .vp-row {
+    gap: 10px;
+  }
+  .ayden .vp-title {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+  .ayden .vp-time {
+    display: none;
+  }
+  .ayden .vp-wave {
+    height: 36px;
+    gap: 1px;
+  }
+
+  .ayden .bio {
+    grid-template-columns: 1fr;
+    padding: 60px 24px;
+    gap: 40px;
+  }
+  .ayden .bio-heading {
+    font-size: 32px;
+  }
+  .ayden .bio-quote {
+    font-size: 18px;
+  }
+  .ayden .bio-text {
+    font-size: 14px;
+  }
+
+  .ayden .links-section {
+    padding: 60px 24px;
+  }
+  .ayden .links-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .ayden .link-card {
+    padding: 20px 12px;
+  }
+  .ayden .link-title {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+  }
+
+  .ayden .tickets-preview {
+    padding: 60px 24px;
+  }
+  .ayden .tickets-heading {
+    font-size: 36px;
+  }
+  .ayden .tickets-cta {
+    padding: 14px 36px;
+    font-size: 11px;
+  }
+
+  .ayden .capture-section {
+    padding: 60px 24px;
+  }
+  .ayden .capture-heading {
+    font-size: 36px;
+  }
+  .ayden .capture-form {
+    flex-direction: column;
+  }
+
+  .ayden .site-footer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .ayden .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+/* Keep the portrait and profile in separate rows on phones and portrait tablets. */
+@media (max-width: 768px), (max-width: 1024px) and (orientation: portrait) {
+  .ayden .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    justify-items: center;
+    padding: calc(var(--nav-height) + 32px) 0 48px;
+  }
+  .ayden .hero-content {
+    display: contents;
+  }
+  .ayden .hero-title,
+  .ayden .hero-tagline,
+  .ayden .hero-profile {
+    position: relative;
+    z-index: 2;
+    max-width: calc(100% - 48px);
+  }
+  .ayden .hero-title {
+    grid-row: 1;
+    width: 220px;
+    margin-bottom: 14px;
+    font-size: 36px;
+    letter-spacing: 1.5px;
+  }
+  .ayden .hero-tagline {
+    grid-row: 2;
+    width: 220px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+  .ayden .hero-photo-area {
+    grid-row: 3;
+    position: relative;
+    inset: auto;
+    width: min(100%, 440px);
+    height: clamp(300px, 100vw, 400px);
+  }
+  .ayden .hero-photo-area::after {
+    background: linear-gradient(to bottom, var(--bg), rgba(14, 14, 14, 0.05) 18%, transparent 50%, rgba(14, 14, 14, 0.75) 86%, var(--bg));
+  }
+  .ayden .hero-profile {
+    grid-row: 4;
+    width: 320px;
+    margin: 12px 0 0;
+  }
+  .ayden .hero-profile__row {
+    padding: 14px 0;
+  }
+  .ayden .hero-profile dt {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+  }
+  .ayden .hero-profile dd {
+    font-size: 26px;
+  }
+  .ayden .hero-profile__row--contact {
+    column-gap: 20px;
+  }
+  .ayden .hero-profile__row--contact dd {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1099px) {
+  .ayden .bio {
+    padding: 80px 32px;
+    gap: 40px;
+  }
+  .ayden .bio-heading {
+    font-size: 36px;
+  }
+  .ayden .site-footer {
+    padding: 40px 32px;
+  }
+}
+
+@media (min-width: 769px) and (max-height: 600px) {
+  .ayden .hero-photo-area {
+    top: var(--nav-height);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ayden .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .ayden .scale-img {
+    transform: none !important;
+    will-change: auto;
+  }
+  .ayden .project-frame,
+  .ayden .project-overlay {
+    transition: none;
+  }
+  .ayden .scroll-progress {
+    display: none;
+  }
+}

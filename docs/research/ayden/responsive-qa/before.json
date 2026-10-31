@@ -1,0 +1,824 @@
+[
+  {
+    "bio": {
+      "bottom": 4046,
+      "height": 1069,
+      "right": 320,
+      "width": 320,
+      "x": 0,
+      "y": 2977
+    },
+    "bioContent": {
+      "bottom": 3986,
+      "height": 501,
+      "right": 296,
+      "width": 272,
+      "x": 24,
+      "y": 3485
+    },
+    "columns": "280px",
+    "content": {
+      "bottom": 894,
+      "height": 770,
+      "right": 318,
+      "width": 316,
+      "x": 2,
+      "y": 124
+    },
+    "footerWidth": 320,
+    "hero": {
+      "bottom": 942,
+      "height": 942,
+      "right": 320,
+      "width": 320,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 116,
+    "navLinks": [
+      {
+        "height": 17,
+        "label": "FACEBOOK",
+        "right": 148,
+        "x": 61
+      },
+      {
+        "height": 17,
+        "label": "INSTAGRAM",
+        "right": 259,
+        "x": 166
+      },
+      {
+        "height": 17,
+        "label": "SOUNDCLOUD",
+        "right": 213,
+        "x": 107
+      }
+    ],
+    "overflow": false,
+    "viewport": "320x568"
+  },
+  {
+    "bio": {
+      "bottom": 4373,
+      "height": 1066,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 3307
+    },
+    "bioContent": {
+      "bottom": 4313,
+      "height": 416,
+      "right": 351,
+      "width": 327,
+      "x": 24,
+      "y": 3898
+    },
+    "columns": "335px",
+    "content": {
+      "bottom": 894,
+      "height": 770,
+      "right": 346,
+      "width": 316,
+      "x": 30,
+      "y": 124
+    },
+    "footerWidth": 375,
+    "hero": {
+      "bottom": 942,
+      "height": 942,
+      "right": 375,
+      "width": 375,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 87,
+    "navLinks": [
+      {
+        "height": 17,
+        "label": "FACEBOOK",
+        "right": 114,
+        "x": 26
+      },
+      {
+        "height": 17,
+        "label": "INSTAGRAM",
+        "right": 224,
+        "x": 132
+      },
+      {
+        "height": 17,
+        "label": "SOUNDCLOUD",
+        "right": 349,
+        "x": 242
+      }
+    ],
+    "overflow": false,
+    "viewport": "375x667"
+  },
+  {
+    "bio": {
+      "bottom": 4486,
+      "height": 1089,
+      "right": 390,
+      "width": 390,
+      "x": 0,
+      "y": 3397
+    },
+    "bioContent": {
+      "bottom": 4426,
+      "height": 416,
+      "right": 366,
+      "width": 342,
+      "x": 24,
+      "y": 4010
+    },
+    "columns": "350px",
+    "content": {
+      "bottom": 894,
+      "height": 770,
+      "right": 353,
+      "width": 316,
+      "x": 37,
+      "y": 124
+    },
+    "footerWidth": 390,
+    "hero": {
+      "bottom": 942,
+      "height": 942,
+      "right": 390,
+      "width": 390,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 87,
+    "navLinks": [
+      {
+        "height": 17,
+        "label": "FACEBOOK",
+        "right": 121,
+        "x": 33
+      },
+      {
+        "height": 17,
+        "label": "INSTAGRAM",
+        "right": 232,
+        "x": 139
+      },
+      {
+        "height": 17,
+        "label": "SOUNDCLOUD",
+        "right": 357,
+        "x": 250
+      }
+    ],
+    "overflow": false,
+    "viewport": "390x844"
+  },
+  {
+    "bio": {
+      "bottom": 4734,
+      "height": 1097,
+      "right": 430,
+      "width": 430,
+      "x": 0,
+      "y": 3637
+    },
+    "bioContent": {
+      "bottom": 4674,
+      "height": 364,
+      "right": 406,
+      "width": 382,
+      "x": 24,
+      "y": 4310
+    },
+    "columns": "390px",
+    "content": {
+      "bottom": 894,
+      "height": 770,
+      "right": 373,
+      "width": 316,
+      "x": 57,
+      "y": 124
+    },
+    "footerWidth": 430,
+    "hero": {
+      "bottom": 942,
+      "height": 942,
+      "right": 430,
+      "width": 430,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 87,
+    "navLinks": [
+      {
+        "height": 17,
+        "label": "FACEBOOK",
+        "right": 141,
+        "x": 53
+      },
+      {
+        "height": 17,
+        "label": "INSTAGRAM",
+        "right": 252,
+        "x": 159
+      },
+      {
+        "height": 17,
+        "label": "SOUNDCLOUD",
+        "right": 377,
+        "x": 270
+      }
+    ],
+    "overflow": false,
+    "viewport": "430x932"
+  },
+  {
+    "bio": {
+      "bottom": 6460,
+      "height": 1401,
+      "right": 667,
+      "width": 667,
+      "x": 0,
+      "y": 5059
+    },
+    "bioContent": {
+      "bottom": 6400,
+      "height": 312,
+      "right": 643,
+      "width": 619,
+      "x": 24,
+      "y": 6088
+    },
+    "columns": "627px",
+    "content": {
+      "bottom": 894,
+      "height": 770,
+      "right": 492,
+      "width": 316,
+      "x": 176,
+      "y": 124
+    },
+    "footerWidth": 667,
+    "hero": {
+      "bottom": 942,
+      "height": 942,
+      "right": 667,
+      "width": 667,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 87,
+    "navLinks": [
+      {
+        "height": 17,
+        "label": "FACEBOOK",
+        "right": 260,
+        "x": 172
+      },
+      {
+        "height": 17,
+        "label": "INSTAGRAM",
+        "right": 370,
+        "x": 278
+      },
+      {
+        "height": 17,
+        "label": "SOUNDCLOUD",
+        "right": 495,
+        "x": 388
+      }
+    ],
+    "overflow": false,
+    "viewport": "667x375"
+  },
+  {
+    "bio": {
+      "bottom": 2772,
+      "height": 834,
+      "right": 844,
+      "width": 844,
+      "x": 0,
+      "y": 1938
+    },
+    "bioContent": {
+      "bottom": 2652,
+      "height": 594,
+      "right": 764,
+      "width": 302,
+      "x": 462,
+      "y": 2058
+    },
+    "columns": "392px 392px",
+    "content": {
+      "bottom": 541,
+      "height": 591,
+      "right": 400,
+      "width": 400,
+      "x": 0,
+      "y": -51
+    },
+    "footerWidth": 844,
+    "hero": {
+      "bottom": 390,
+      "height": 390,
+      "right": 844,
+      "width": 844,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": true,
+    "navHeight": 101,
+    "navLinks": [
+      {
+        "height": 19,
+        "label": "FACEBOOK",
+        "right": 176,
+        "x": 76
+      },
+      {
+        "height": 19,
+        "label": "INSTAGRAM",
+        "right": 302,
+        "x": 196
+      },
+      {
+        "height": 19,
+        "label": "SOUNDCLOUD",
+        "right": 663,
+        "x": 542
+      },
+      {
+        "height": 19,
+        "label": "CONTACT",
+        "right": 773,
+        "x": 683
+      }
+    ],
+    "overflow": false,
+    "viewport": "844x390"
+  },
+  {
+    "bio": {
+      "bottom": 7274,
+      "height": 1526,
+      "right": 768,
+      "width": 768,
+      "x": 0,
+      "y": 5748
+    },
+    "bioContent": {
+      "bottom": 7214,
+      "height": 286,
+      "right": 744,
+      "width": 720,
+      "x": 24,
+      "y": 6928
+    },
+    "columns": "728px",
+    "content": {
+      "bottom": 935,
+      "height": 770,
+      "right": 542,
+      "width": 316,
+      "x": 226,
+      "y": 165
+    },
+    "footerWidth": 768,
+    "hero": {
+      "bottom": 1024,
+      "height": 1024,
+      "right": 768,
+      "width": 768,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 87,
+    "navLinks": [
+      {
+        "height": 17,
+        "label": "FACEBOOK",
+        "right": 310,
+        "x": 222
+      },
+      {
+        "height": 17,
+        "label": "INSTAGRAM",
+        "right": 421,
+        "x": 328
+      },
+      {
+        "height": 17,
+        "label": "SOUNDCLOUD",
+        "right": 546,
+        "x": 439
+      }
+    ],
+    "overflow": false,
+    "viewport": "768x1024"
+  },
+  {
+    "bio": {
+      "bottom": 3526,
+      "height": 834,
+      "right": 820,
+      "width": 820,
+      "x": 0,
+      "y": 2692
+    },
+    "bioContent": {
+      "bottom": 3406,
+      "height": 594,
+      "right": 740,
+      "width": 290,
+      "x": 450,
+      "y": 2812
+    },
+    "columns": "380px 380px",
+    "content": {
+      "bottom": 936,
+      "height": 591,
+      "right": 400,
+      "width": 400,
+      "x": 0,
+      "y": 344
+    },
+    "footerWidth": 820,
+    "hero": {
+      "bottom": 1180,
+      "height": 1180,
+      "right": 820,
+      "width": 820,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 101,
+    "navLinks": [
+      {
+        "height": 19,
+        "label": "FACEBOOK",
+        "right": 164,
+        "x": 64
+      },
+      {
+        "height": 19,
+        "label": "INSTAGRAM",
+        "right": 290,
+        "x": 184
+      },
+      {
+        "height": 19,
+        "label": "SOUNDCLOUD",
+        "right": 651,
+        "x": 530
+      },
+      {
+        "height": 19,
+        "label": "CONTACT",
+        "right": 761,
+        "x": 671
+      }
+    ],
+    "overflow": false,
+    "viewport": "820x1180"
+  },
+  {
+    "bio": {
+      "bottom": 3424,
+      "height": 828,
+      "right": 1024,
+      "width": 1024,
+      "x": 0,
+      "y": 2596
+    },
+    "bioContent": {
+      "bottom": 3250,
+      "height": 480,
+      "right": 944,
+      "width": 392,
+      "x": 552,
+      "y": 2771
+    },
+    "columns": "482px 482px",
+    "content": {
+      "bottom": 730,
+      "height": 591,
+      "right": 400,
+      "width": 400,
+      "x": 0,
+      "y": 138
+    },
+    "footerWidth": 1024,
+    "hero": {
+      "bottom": 768,
+      "height": 768,
+      "right": 1024,
+      "width": 1024,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 101,
+    "navLinks": [
+      {
+        "height": 19,
+        "label": "FACEBOOK",
+        "right": 266,
+        "x": 166
+      },
+      {
+        "height": 19,
+        "label": "INSTAGRAM",
+        "right": 392,
+        "x": 286
+      },
+      {
+        "height": 19,
+        "label": "SOUNDCLOUD",
+        "right": 753,
+        "x": 632
+      },
+      {
+        "height": 19,
+        "label": "CONTACT",
+        "right": 863,
+        "x": 773
+      }
+    ],
+    "overflow": false,
+    "viewport": "1024x768"
+  },
+  {
+    "bio": {
+      "bottom": 4022,
+      "height": 828,
+      "right": 1024,
+      "width": 1024,
+      "x": 0,
+      "y": 3194
+    },
+    "bioContent": {
+      "bottom": 3848,
+      "height": 480,
+      "right": 944,
+      "width": 392,
+      "x": 552,
+      "y": 3369
+    },
+    "columns": "482px 482px",
+    "content": {
+      "bottom": 1029,
+      "height": 591,
+      "right": 400,
+      "width": 400,
+      "x": 0,
+      "y": 437
+    },
+    "footerWidth": 1024,
+    "hero": {
+      "bottom": 1366,
+      "height": 1366,
+      "right": 1024,
+      "width": 1024,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 101,
+    "navLinks": [
+      {
+        "height": 19,
+        "label": "FACEBOOK",
+        "right": 266,
+        "x": 166
+      },
+      {
+        "height": 19,
+        "label": "INSTAGRAM",
+        "right": 392,
+        "x": 286
+      },
+      {
+        "height": 19,
+        "label": "SOUNDCLOUD",
+        "right": 753,
+        "x": 632
+      },
+      {
+        "height": 19,
+        "label": "CONTACT",
+        "right": 863,
+        "x": 773
+      }
+    ],
+    "overflow": false,
+    "viewport": "1024x1366"
+  },
+  {
+    "bio": {
+      "bottom": 3827,
+      "height": 945,
+      "right": 1180,
+      "width": 1180,
+      "x": 0,
+      "y": 2882
+    },
+    "bioContent": {
+      "bottom": 3556,
+      "height": 401,
+      "right": 1100,
+      "width": 470,
+      "x": 630,
+      "y": 3154
+    },
+    "columns": "560px 560px",
+    "content": {
+      "bottom": 756,
+      "height": 591,
+      "right": 400,
+      "width": 400,
+      "x": 0,
+      "y": 164
+    },
+    "footerWidth": 1180,
+    "hero": {
+      "bottom": 820,
+      "height": 820,
+      "right": 1180,
+      "width": 1180,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 101,
+    "navLinks": [
+      {
+        "height": 20,
+        "label": "FACEBOOK",
+        "right": 229,
+        "x": 116
+      },
+      {
+        "height": 20,
+        "label": "INSTAGRAM",
+        "right": 410,
+        "x": 289
+      },
+      {
+        "height": 20,
+        "label": "SOUNDCLOUD",
+        "right": 908,
+        "x": 770
+      },
+      {
+        "height": 20,
+        "label": "CONTACT",
+        "right": 1070,
+        "x": 968
+      }
+    ],
+    "overflow": false,
+    "viewport": "1180x820"
+  },
+  {
+    "bio": {
+      "bottom": 4246,
+      "height": 1085,
+      "right": 1366,
+      "width": 1366,
+      "x": 0,
+      "y": 3161
+    },
+    "bioContent": {
+      "bottom": 3890,
+      "height": 374,
+      "right": 1286,
+      "width": 563,
+      "x": 723,
+      "y": 3517
+    },
+    "columns": "585px 585px",
+    "content": {
+      "bottom": 858,
+      "height": 591,
+      "right": 400,
+      "width": 400,
+      "x": 0,
+      "y": 266
+    },
+    "footerWidth": 1366,
+    "hero": {
+      "bottom": 1024,
+      "height": 1024,
+      "right": 1366,
+      "width": 1366,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 101,
+    "navLinks": [
+      {
+        "height": 20,
+        "label": "FACEBOOK",
+        "right": 322,
+        "x": 209
+      },
+      {
+        "height": 20,
+        "label": "INSTAGRAM",
+        "right": 503,
+        "x": 382
+      },
+      {
+        "height": 20,
+        "label": "SOUNDCLOUD",
+        "right": 1001,
+        "x": 863
+      },
+      {
+        "height": 20,
+        "label": "CONTACT",
+        "right": 1163,
+        "x": 1061
+      }
+    ],
+    "overflow": false,
+    "viewport": "1366x1024"
+  },
+  {
+    "bio": {
+      "bottom": 4147,
+      "height": 1110,
+      "right": 1420,
+      "width": 1400,
+      "x": 20,
+      "y": 3037
+    },
+    "bioContent": {
+      "bottom": 3779,
+      "height": 374,
+      "right": 1340,
+      "width": 580,
+      "x": 760,
+      "y": 3406
+    },
+    "columns": "585px 585px",
+    "content": {
+      "bottom": 796,
+      "height": 591,
+      "right": 400,
+      "width": 400,
+      "x": 0,
+      "y": 204
+    },
+    "footerWidth": 1440,
+    "hero": {
+      "bottom": 900,
+      "height": 900,
+      "right": 1440,
+      "width": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "heroContentClipped": false,
+    "navHeight": 101,
+    "navLinks": [
+      {
+        "height": 20,
+        "label": "FACEBOOK",
+        "right": 359,
+        "x": 246
+      },
+      {
+        "height": 20,
+        "label": "INSTAGRAM",
+        "right": 540,
+        "x": 419
+      },
+      {
+        "height": 20,
+        "label": "SOUNDCLOUD",
+        "right": 1038,
+        "x": 900
+      },
+      {
+        "height": 20,
+        "label": "CONTACT",
+        "right": 1200,
+        "x": 1098
+      }
+    ],
+    "overflow": false,
+    "viewport": "1440x900"
+  }
+]
